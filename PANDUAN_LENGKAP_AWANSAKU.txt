@@ -1,0 +1,44 @@
+==================================================
+      JURNAL PROYEK: AWANSAKU (SERVER SAKU)
+        DARI NOL SAMPAI ONLINE (FULL)
+==================================================
+
+[ TAHAP 1: PERSIAPAN TEMPAT ]
+1. Instal Termux (via F-Droid).
+2. Perintah Awal:
+   $ pkg update && pkg upgrade -y
+   $ termux-setup-storage (Berikan izin memori)
+
+[ TAHAP 2: MEMBANGUN RUMAH (KODE WEB) ]
+1. Buat Folder: 
+   $ mkdir -p ~/web_mandiri
+   $ cd ~/web_mandiri
+2. Membuat Kode Web (index.html) dengan Nano:
+   $ nano index.html
+   (Tulis kode HTML/CSS di sana, lalu CTRL+X, Y, ENTER)
+
+[ TAHAP 3: INSTALASI MESIN SERVER ]
+1. Instal Python (Mesin Pembaca):
+   $ pkg install python -y
+2. Instal Bore (Jalur Domain Online):
+   $ pkg install rust make clang -y
+   $ cargo install bore-cli
+
+[ TAHAP 4: RITUAL MENJALANKAN (2 SESI) ]
+* Sesi 1 (Nyalakan Mesin Lokal):
+  $ cd ~/web_mandiri && python -m http.server 8080
+* Sesi 2 (Nyalakan Jalur Publik):
+  $ bore local 8080 --to bore.pub
+* Hasil Akhir: Cek link "bore.pub:XXXXX" di Chrome.
+
+[ TAHAP 5: PENGAMANAN & ASURANSI DATA ]
+1. Backup ke Memori HP:
+   $ mkdir -p /sdcard/Backup_AwanSaku
+   $ cp -r ~/web_mandiri/* /sdcard/Backup_AwanSaku/
+2. Cara Restore (Jika HP Ganti/Reset):
+   $ mkdir -p ~/web_mandiri
+   $ cp -r /sdcard/Backup_AwanSaku/* ~/web_mandiri/
+
+==================================================
+STATUS: PROYEK SUKSES & BERJALAN!
+==================================================
